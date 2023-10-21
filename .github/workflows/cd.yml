@@ -6,11 +6,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: main
 
     steps:
     - uses: actions/checkout@v1
 
-      - name: Copy repository contents via scp
+    - name: Copy repository contents via scp
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
@@ -23,8 +24,8 @@ jobs:
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
+        HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: ls
+        script: reboot
