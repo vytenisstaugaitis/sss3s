@@ -19,7 +19,7 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         script: |
-          cd ~/my-app
+          cd ~/cd-ci
           git pull origin main
           npm install
           npm run build
