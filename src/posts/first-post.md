@@ -1,6 +1,6 @@
 ---
 title: A very first post
-description: Let's check if its working.
+description: Let's see if its working.
 date: '2023-10-27'
 categories:
   - sveltekit
