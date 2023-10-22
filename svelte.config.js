@@ -1,5 +1,13 @@
 import adapter from '@sveltejs/adapter-node'
 import { vitePreprocess } from '@sveltejs/kit/vite'
+import { mdsvex } from 'mdsvex'
+
+const mdsvexOptions = {
+	extensions: ['.md'],
+	layout: {
+		_: './src/mdsvex.svelte'
+	}
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,7 +17,8 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter()
 	},
-	preprocess: vitePreprocess()
+	extensions: ['.svelte', '.md'],
+	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)]
 };
 
 export default config;
