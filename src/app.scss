@@ -2,10 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --bg: #fff;
+    --text: #000;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
 h1 {
     font-size: 3rem;
 
     @media screen and (max-width: 768px) {
         font-size: 2.5rem;
+    }
+}
+
+
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #131720;
+        --text: #efe9e9;
+    }
+}
+
+html[data-theme="light"] {
+    --bg: #fff;
+    --text: #000;
+
+    #theme-toggle {
+        #moon {
+            display: block;
+        }
+        #sun {
+            display: none;
+        }
+    }
+}
+
+html[data-theme="dark"] {
+    #theme-toggle {
+        #moon {
+            display: none;
+        }
+        #sun {
+            display: block;
+        }
     }
 }
