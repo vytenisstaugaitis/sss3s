@@ -20,5 +20,4 @@
    :   \         ;
       .
     </pre>
-    <p class="text-xs -translate-y-10 translate-x-36 inline-block">Ooyamaneko</p>
 </div>
